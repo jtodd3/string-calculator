@@ -1,4 +1,4 @@
-const add = require('./add.js').default;
+const { add  } = require('./add.js');
 
 test('"add" should return a zero when given an empty string', () => {
   expect(add('')).toBe(0);
@@ -17,9 +17,9 @@ test('"add" should return a sum given a string of comma deliminated numbers with
 });
 
 test('"add" should return a sum given a string of comma deliminated number with new line characters', () => {
-  expect(add('5,3,\n,3,\n,\n,4,\n')).toBe(15);
+  expect(add('5,3,\\n,3,\\n,\\n,4,\\n')).toBe(15);
 });
 
 test('"add" should return a sum given a string of comma deliminated number with new line characters and empty values', () => {
-  expect(add('11,3,,\n,7,\n,3')).toBe(24);
+  expect(add('11,3,,\\n,7,\\n,3')).toBe(24);
 });
