@@ -1,0 +1,29 @@
+{
+  "name": "string-calculator",
+  "version": "1.0.0",
+  "description": "Takes in a delimitinated string of numbers and returns a summation of the numbers",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "jest",
+    "build": "tsc src/index.ts",
+    "start": "npm run build && node src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jtodd3/string-calculator.git"
+  },
+  "author": "jtodd3",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jtodd3/string-calculator/issues"
+  },
+  "homepage": "https://github.com/jtodd3/string-calculator#readme",
+  "dependencies": {
+    "@types/node": "^12.7.11",
+    "flow": "^0.2.3",
+    "typescript": "^3.6.3"
+  },
+  "devDependencies": {
+    "jest": "^24.9.0"
+  }
+}
