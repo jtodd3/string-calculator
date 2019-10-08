@@ -1,4 +1,4 @@
-import add from './add';
+import { add } from './utils/add';
 
 process.stdin.setEncoding('utf8');
 
