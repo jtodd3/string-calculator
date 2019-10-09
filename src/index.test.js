@@ -55,3 +55,8 @@ test('"calculateSumFromInput" should return the sum of numbers with a multi-line
   expect(calculateSumFromInput(input)).toBe(9);
 });
 
+test('"calculateSumFromInput" should return the sum of numbers with a multiple delimiters', () => {
+  const input = '//$,&\\n4$3&1$2&11';
+  expect(calculateSumFromInput(input)).toBe(21);
+});
+

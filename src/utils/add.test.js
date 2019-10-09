@@ -49,3 +49,20 @@ test('"add" should only return the sum of numbers that are less than or equal 10
 test('"add" should only return the sum of numbers that are less than or equal 1000 (with empty values & newlines)', () => {
   expect(add('999,,1000,\n,1001,9')).toBe(2008);
 });
+
+test('"add" should return the number of numbers with a multi-character delimiter', () => {
+  expect(add('111**44**2**5', '**')).toBe(162);
+});
+
+test('"add" should return the number of numbers with a multi-character delimiter (with empty values and newlines)', () => {
+  expect(add('111****44**\n**5', '**')).toBe(160);
+});
+
+test('"add" should return the number of numbers with a multi-character delimiter', () => {
+  expect(add('11**4$4$2**5', ['**','$'])).toBe(26);
+});
+
+test('"add" should return the number of numbers with a multiple delimiters (with empty values and newlines)', () => {
+  expect(add('11%4$!4$22!\n5%\n', ['%','$', '!'])).toBe(46);
+});
+

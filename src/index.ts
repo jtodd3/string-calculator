@@ -2,10 +2,15 @@ import { add } from './utils/add';
 
 const NEWLINE_CHARACTER = '\\n';
 
-const getDelimiter = (inputString: string, controlCharacter: string = '//', endOfDelimiter: string = NEWLINE_CHARACTER): string => {
+const getDelimiter = (inputString: string, controlCharacter: string = '//', endOfDelimiter: string = NEWLINE_CHARACTER): string[] => {
   const controlCodeIndex = inputString.indexOf(controlCharacter) + controlCharacter.length;
   const endOfDelimiterIndex = inputString.indexOf(endOfDelimiter);
-  return inputString.slice(controlCodeIndex, endOfDelimiterIndex);
+  const delimiterString = inputString.slice(controlCodeIndex, endOfDelimiterIndex);
+  if (delimiterString.length > 1) {
+    return delimiterString.split(',');
+  } else {
+    return [delimiterString];
+  }
 }
 
 const getStringOfNumbers = (inputString: string, endOfDelimiter: string = NEWLINE_CHARACTER): string => {

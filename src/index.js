@@ -7,7 +7,13 @@ var getDelimiter = function (inputString, controlCharacter, endOfDelimiter) {
     if (endOfDelimiter === void 0) { endOfDelimiter = NEWLINE_CHARACTER; }
     var controlCodeIndex = inputString.indexOf(controlCharacter) + controlCharacter.length;
     var endOfDelimiterIndex = inputString.indexOf(endOfDelimiter);
-    return inputString.slice(controlCodeIndex, endOfDelimiterIndex);
+    var delimiterString = inputString.slice(controlCodeIndex, endOfDelimiterIndex);
+    if (delimiterString.length > 1) {
+        return delimiterString.split(',');
+    }
+    else {
+        return [delimiterString];
+    }
 };
 var getStringOfNumbers = function (inputString, endOfDelimiter) {
     if (endOfDelimiter === void 0) { endOfDelimiter = NEWLINE_CHARACTER; }
