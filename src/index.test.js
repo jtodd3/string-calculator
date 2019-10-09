@@ -44,3 +44,14 @@ test('"calculateSumFromInput" should return zero is there is no values after the
   const input = '//;\\n';
   expect(calculateSumFromInput(input)).toBe(0);
 });
+
+test('"calculateSumFromInput" should return the sum of numbers with a multi-line delimiter', () => {
+  const input = '//***\\n4***3***2***1';
+  expect(calculateSumFromInput(input)).toBe(10);
+});
+
+test('"calculateSumFromInput" should return the sum of numbers with a multi-line delimiter (with empty values and newlines)', () => {
+  const input = '//***\\n4******4***\n***1';
+  expect(calculateSumFromInput(input)).toBe(9);
+});
+
