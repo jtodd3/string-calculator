@@ -4,7 +4,7 @@ exports.add = function (numbers, delimiter) {
     if (delimiter === void 0) { delimiter = ','; }
     var convertedNumbers = numbers.split(delimiter)
         .map(function (number) { return Number(number); })
-        .filter(function (val) { return !isNaN(val); });
+        .filter(function (number) { return number <= 1000; });
     if (convertedNumbers.some((function (number) { return number < 0; }))) {
         var negativeNumbers = convertedNumbers.filter(function (number) { return number < 0; });
         throw new Error("Negatives not allowed. Negative numbers found: " + negativeNumbers.join(','));

@@ -41,3 +41,11 @@ test('"add" should throw an eror is any of the numbers are negative (with empty 
     expect(e.message).toBe('Negatives not allowed. Negative numbers found: -9');
   }
 });
+
+test('"add" should only return the sum of numbers that are less than or equal 1000', () => {
+  expect(add('999,1000,1001')).toBe(1999);
+});
+
+test('"add" should only return the sum of numbers that are less than or equal 1000 (with empty values & newlines)', () => {
+  expect(add('999,,1000,\n,1001,9')).toBe(2008);
+});
