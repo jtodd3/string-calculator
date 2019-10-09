@@ -58,11 +58,19 @@ test('"add" should return the number of numbers with a multi-character delimiter
   expect(add('111****44**\n**5', '**')).toBe(160);
 });
 
-test('"add" should return the number of numbers with a multi-character delimiter', () => {
+test('"add" should return the number of numbers with a multiple delimiters', () => {
   expect(add('11**4$4$2**5', ['**','$'])).toBe(26);
 });
 
 test('"add" should return the number of numbers with a multiple delimiters (with empty values and newlines)', () => {
   expect(add('11%4$!4$22!\n5%\n', ['%','$', '!'])).toBe(46);
+});
+
+test('"add" should return the number of numbers with a multiple multi-character delimiters', () => {
+  expect(add('11**4$$12%%4$$2**5', ['**','$$', '%%'])).toBe(38);
+});
+
+test('"add" should return the number of numbers with a multiple multi-character delimiters (with empty values and newlines)', () => {
+  expect(add('1++//\n//4==++5', ['//','++', '=='])).toBe(10);
 });
 

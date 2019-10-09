@@ -60,3 +60,8 @@ test('"calculateSumFromInput" should return the sum of numbers with a multiple d
   expect(calculateSumFromInput(input)).toBe(21);
 });
 
+test('"calculateSumFromInput" should return the sum of numbers with multiple multi-character delimiters', () => {
+  const input = `//^^,##,--\\n6##3--8^^5^^2##1--9`;
+  expect(calculateSumFromInput(input)).toBe(34);
+});
+
