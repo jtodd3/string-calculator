@@ -36,7 +36,7 @@ test('"calculateSumFromInput" should return the sum of values deliminated by a "
 });
 
 test('"calculateSumFromInput" should return the sum of  values deliminated by a ";" (with newlines and empty values in string of values)', () => {
-  const input = '//;\\n1;\\n;;4;2;\\n';
+  const input = '//;\\n1;\n;;4;2;\n';
   expect(calculateSumFromInput(input)).toBe(7);
 });
 

@@ -17,9 +17,27 @@ test('"add" should return a sum given a string of comma deliminated numbers with
 });
 
 test('"add" should return a sum given a string of comma deliminated number with new line characters', () => {
-  expect(add('5,3,\\n,3,\\n,\\n,4,\\n')).toBe(15);
+  expect(add('5,3,\n,3,\n,\n,4,\\n')).toBe(15);
 });
 
 test('"add" should return a sum given a string of comma deliminated number with new line characters and empty values', () => {
-  expect(add('11,3,,\\n,7,\\n,3')).toBe(24);
+  expect(add('11,3,,\n,7,\n,3')).toBe(24);
+});
+
+test('"add" should throw an eror is any of the numbers are negative', () => {
+  try {
+    add('11,3,-9,3,-2');
+    expect(true).toBe(false)
+  } catch (e) {
+    expect(e.message).toBe('Negatives not allowed. Negative numbers found: -9,-2');
+  }
+});
+
+test('"add" should throw an eror is any of the numbers are negative (with empty values and newlines)', () => {
+  try {
+    add('11,\n,-9,,');
+    expect(true).toBe(false)
+  } catch (e) {
+    expect(e.message).toBe('Negatives not allowed. Negative numbers found: -9');
+  }
 });

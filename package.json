@@ -4,7 +4,7 @@
   "description": "Takes in a delimitinated string of numbers and returns a summation of the numbers",
   "main": "src/index.js",
   "scripts": {
-    "test": "jest",
+    "test": "npm run build && jest --watchAll", 
     "build": "tsc src/index.ts",
     "start": "npm run build && node src/index.js"
   },
