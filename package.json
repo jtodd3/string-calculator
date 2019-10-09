@@ -4,7 +4,7 @@
   "description": "Takes in a delimitinated string of numbers and returns a summation of the numbers",
   "main": "src/index.js",
   "scripts": {
-    "test": "npm run build && jest --watchAll", 
+    "test": "npm run build && jest --watchAll",
     "build": "tsc src/index.ts",
     "start": "npm run build && node src/index.js"
   },
@@ -20,7 +20,6 @@
   "homepage": "https://github.com/jtodd3/string-calculator#readme",
   "dependencies": {
     "@types/node": "^12.7.11",
-    "flow": "^0.2.3",
     "typescript": "^3.6.3"
   },
   "devDependencies": {
